@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import progress from 'nprogress';
 import Home from '@/views/Home.vue';
 import CSS from './css';
 
@@ -11,5 +12,9 @@ const router = new VueRouter({
         { path: '/', name: 'home', component: Home },
         CSS,
     ],
+});
+router.beforeEach((to, from, next) => {
+    progress.start();
+    next();
 });
 export default router;

@@ -4,5 +4,13 @@
     </div>
 </template>
 <script>
-export default {};
+import progress from 'nprogress';
+
+export default {
+    beforeRouteEnter(from, to, next) {
+        next(() => {
+            progress.done();
+        });
+    },
+};
 </script>
