@@ -5,7 +5,7 @@
 </template>
 
 <style lang="css" scoped>
-    #app {
-        height: 100%;
-    }
+  #app {
+    height: 100%;
+  }
 </style>

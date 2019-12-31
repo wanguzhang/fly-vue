@@ -22,35 +22,59 @@ export default {
 </script>
 <style lang="scss" scoped>
 body {
-   display: flex;
+  display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
   background: #222;
 }
 
-.burger-menu2{
-    position: relative;
-    z-index: 2;
-    width: 10em;
-    height: 10em;
-    background: #222;
-    border-radius: 50%;
-    .line {
-        position: absolute;
-        left: 25%;
-        width: 50%;
-        height: 3px;
-        background: black;
-        overflow: hidden;
-        transition: all 0.5s ease;
-            &:nth-child(1) {
-                top: 30%;
-            }
+.burger-menu2 {
+  position: relative;
+  z-index: 2;
+  width: 10em;
+  height: 10em;
+  background: #222;
+  border-radius: 50%;
+
+  .line {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: black;
+    overflow: hidden;
+    transition: all 0.5s ease;
+
+    &:nth-child(1) {
+      top: 30%;
+    }
+
     &:nth-child(3) {
       bottom: 30%;
     }
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: lightblue;
+      transform: translateX(-100%);
+      transition: all 0.25s ease;
     }
+      @for $i from 2 through 3 {
+      &:nth-child(#{$i})::after {
+        transition-delay: 0.1s * ($i - 1);
+      }
+    }
+  }
+   &:hover {
+    .line::after {
+      transform: translateX(0);
+    }
+  }
 }
 
 .burger-menu {
@@ -104,26 +128,6 @@ body {
   &:hover {
     .line::after {
       transform: translateX(0);
-    }
-  }
-
-  &.active {
-    box-shadow: 0 0 0 1000px lightblue;
-
-    .line {
-      &:nth-child(1) {
-        top: 50%;
-        transform: rotate(45deg);
-      }
-
-      &:nth-child(2) {
-        transform: scaleX(0);
-      }
-
-      &:nth-child(3) {
-        bottom: 50%;
-        transform: rotate(-45deg);
-      }
     }
   }
 }

@@ -70,6 +70,7 @@ export default {
 
 .divBody {
   @include center;
+
   height: 100vh;
   font-family: Lato, sans-serif;
   background-color: #03a9f4;
@@ -91,12 +92,14 @@ nav.navtab {
 
   ul {
     @include center;
+
     width: 100%;
     height: 100%;
     list-style-type: none;
 
     li.navtab-item {
       @include center;
+
       z-index: 2;
       flex-direction: column;
       width: var(--navtab-item-width);

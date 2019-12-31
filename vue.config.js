@@ -8,7 +8,7 @@ module.exports = {
     pluginOptions: {
         lintStyleOnBuild: true,
         stylelint: {
-            fix: true, // boolean (default: true)
+            fix: true,
         },
     },
     chainWebpack: (config) => {
