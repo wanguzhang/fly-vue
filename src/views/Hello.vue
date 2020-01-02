@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import progress from 'nprogress';
 
 export default {
     props: {
@@ -40,12 +39,10 @@ export default {
         // next 中的回调，等渲染之后再调用
         next((vm) => {
             console.log('beforeRouteEnter:', vm.name);
-            progress.done();
         });
     },
     beforeRouteUpdate(to, from, next) {
         console.log('组件复用');
-        progress.done();
         next();
     },
     beforeRouteLeave(to, from, next) {
