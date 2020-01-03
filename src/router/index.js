@@ -11,6 +11,9 @@ import TongXinEmit from '@/views/TongXinEmit.vue';
 import TongXinProps from '@/views/TongXinProps.vue';
 import Freeze from '@/views/Freeze.vue';
 import Dynamic from '@/views/Dynamic.vue';
+import Directive from '@/views/Directive.vue';
+import VueAttribute from '@/views/VueAttribute.vue';
+import Slot from '@/views/Slot.vue';
 import Svg from '@/views/Svg.vue';
 import CSS from './css';
 
@@ -41,6 +44,9 @@ const router = new VueRouter({
         { path: '/Dynamic', component: Dynamic },
         { path: '/Freeze', component: Freeze },
         { path: '/Svg', component: Svg },
+        { path: '/Directive', component: Directive },
+        { path: '/VueAttribute', component: VueAttribute },
+        { path: '/Slot', component: Slot },
     ],
 });
 // 全局导航守卫
