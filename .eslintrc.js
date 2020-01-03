@@ -19,6 +19,7 @@ module.exports = {
         'no-console': 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
         'no-alert': 'off',
+        'no-param-reassign': 'off',
         'no-empty': ['error', { allowEmptyCatch: true }],
         // 推荐 warn
         'max-len': ['warn', { code: 200 }],
