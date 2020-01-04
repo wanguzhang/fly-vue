@@ -6,8 +6,19 @@ const arrCss = require.context('@/components/css', false, /\.vue$/);
 const cssChildren = [];
 arrCss.keys().forEach((component, index) => {
     const cssComponentEntity = arrCss(component).default;
-    cssChildren.push({ path: cssComponentEntity.name, components: { default: cssComponentEntity, b: B }, alias: `${cssComponentEntity.name}${index}` });
+    cssChildren.push({
+        path: cssComponentEntity.name.toLowerCase(),
+        components: {
+            default: cssComponentEntity,
+            b: B,
+        },
+        alias: `${cssComponentEntity.name}${index}`,
+    });
 });
 export default {
-    path: '/css', name: 'css', component: CSS, children: cssChildren, alias: '/foo',
+    path: '/css',
+    name: 'css',
+    component: CSS,
+    children: cssChildren,
+    alias: '/foo',
 };
