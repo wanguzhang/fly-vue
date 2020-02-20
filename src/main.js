@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import Vue from 'vue';
 // import fps from 'fps-indicator';
 import App from './App.vue';
@@ -6,6 +7,11 @@ import 'nprogress/nprogress.css';
 import router from '@/router/index';
 import CompleteProgress from '@/plugins/CompleteProgress';
 import '@/icons';
+
+
+if (process.env.NODE_ENV === 'development') {
+    import('../examples/index');
+}
 
 // fps({
 //     position: 'top-right',
