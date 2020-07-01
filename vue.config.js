@@ -11,6 +11,17 @@ module.exports = {
             fix: true,
         },
     },
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:9009',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': '', // 需要rewrite的,
+                },
+            },
+        },
+    },
     chainWebpack: (config) => {
         // 设置 public 目录别名
         config.resolve.alias.set('#', resolve('public'));

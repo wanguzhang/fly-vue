@@ -2,6 +2,7 @@ module.exports = {
     root: true,
     env: {
         node: true,
+
     },
     extends: [
         'plugin:vue/strongly-recommended',
@@ -9,7 +10,8 @@ module.exports = {
         '@vue/airbnb',
     ],
     globals: {
-
+        CONFIG: false,
+        Stomp: true
     },
     rules: {
         // 强制 error
